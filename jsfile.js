@@ -20,11 +20,11 @@ start.addEventListener('click', function(){
 })
 
 reset.addEventListener('click', function(){
-    wm.innerText = 25;
-    ws.innerText = "00";
+    wm.value = 25;
+    ws.value = "00";
 
-    bm.innerText = 5;
-    bs.innerText = "00";
+    bm.value = 5;
+    bs.value = "00";
 
     document.getElementById('counter').innerText = 0;
     stopInterval()
@@ -40,32 +40,34 @@ stop.addEventListener('click', function(){
 //Start Timer Function
 function timer(){
     //Work Timer Countdown
-    if(ws.innerText != 0){
-        ws.innerText--;
-    } else if(wm.innerText != 0 && ws.innerText == 0){
-        ws.innerText = 59;
-        wm.innerText--;
+    if(ws.value != 0){
+        ws.value--;
+    } else if(wm.value != 0 && ws.value == 0){
+        ws.value = 59;
+        wm.value--;
     }
 
     //Break Timer Countdown
-    if(wm.innerText == 0 && ws.innerText == 0){
-        if(bs.innerText != 0){
-            bs.innerText--;
-        } else if(bm.innerText != 0 && bs.innerText == 0){
-            bs.innerText = 59;
-            bm.innerText--;
+    if(wm.value == 0 && ws.value == 0){
+        if(bs.value != 0){
+            bs.value--;
+        } else if(bm.value != 0 && bs.value == 0){
+            bs.value = 59;
+            bm.value--;
         }
     }
 
     //Increment Counter by one if one full cycle is completed
-    if(wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){
-        wm.innerText = 25;
-        ws.innerText = "00";
+    if(wm.value == 0 && ws.value == 0 && bm.value == 0 && bs.value == 0){
+        wm.value = 25;
+        ws.value = "00";
 
-        bm.innerText = 5;
-        bs.innerText = "00";
+        bm.value = 5;
+        bs.value = "00";
 
         document.getElementById('counter').innerText++;
+        stopInterval()
+        startTimer = undefined;
     }
 }
 
@@ -73,3 +75,4 @@ function timer(){
 function stopInterval(){
     clearInterval(startTimer);
 }
+

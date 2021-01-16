@@ -24,6 +24,8 @@ h1 {
 
 /*timers*/
 .label {
+    margin: 0;
+    
     align-self: center;
     justify-self: center;
 
@@ -48,6 +50,7 @@ h1 {
 
     font-size: 30px;
     font-weight: bold;
+    
 }
 
 p {
@@ -58,6 +61,10 @@ p {
 #counter {
     grid-area: 2 / 3 / 2 / 3;
     color: red;
+}
+
+#p2 {
+    grid-area: 2 / 3 / 2 / 5;
 }
 
 #work-timer {

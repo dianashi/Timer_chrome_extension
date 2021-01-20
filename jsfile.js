@@ -8,6 +8,8 @@ var ws = document.getElementById('w_seconds');
 var bm = document.getElementById('b_minutes');
 var bs = document.getElementById('b_seconds');
 
+var alarm = 0;
+
 //store a reference to a timer variable
 var startTimer;
 
@@ -46,19 +48,31 @@ function timer(){
         ws.value = 59;
         wm.value--;
     }
-
+    
     //Break Timer Countdown
     if(wm.value == 0 && ws.value == 0){
-        if(bs.value != 0){
-            bs.value--;
-        } else if(bm.value != 0 && bs.value == 0){
-            bs.value = 59;
-            bm.value--;
+        if (alarm ==0){
+            alert("Time for a break!");
+            alarm ++;
+            if(bs.value != 0){
+                bs.value--;
+            } else if(bm.value != 0 && bs.value == 0){
+                bs.value = 59;
+                bm.value--;
+            }   
+        } else if (alarm !=0){
+            if(bs.value != 0){
+                bs.value--;
+            } else if(bm.value != 0 && bs.value == 0){
+                bs.value = 59;
+                bm.value--;
+            }    
         }
     }
 
     //Increment Counter by one if one full cycle is completed
     if(wm.value == 0 && ws.value == 0 && bm.value == 0 && bs.value == 0){
+        alert("Back to studying, champ!");
         wm.value = 25;
         ws.value = "00";
 
@@ -75,4 +89,3 @@ function timer(){
 function stopInterval(){
     clearInterval(startTimer);
 }
-

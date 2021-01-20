@@ -1,11 +1,13 @@
 html {
-    background-color: #333232;
+     background: linear-gradient(#ff5e7c, #c272d4); 
+    background: linear-gradient(#ff5e7c, #c272d4); /* Standard syntax */
+    background: -webkit-linear-gradient(#ff5e7c, #c272d4); /* Safari */
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-    color: white;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
@@ -13,9 +15,10 @@ h1 {
 #container {
     height: 200px;
     width: 700px;
-    background-color: #F5E4C3;
+    background-color: #dbb5f6;
     margin: 0 auto;
-    border: 5px solid #88B169;
+    border: 5px solid #e9dcf2;
+    border-radius: 85px;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -60,7 +63,6 @@ p {
 
 #counter {
     grid-area: 2 / 3 / 2 / 3;
-    color: red;
 }
 
 #p2 {
@@ -85,6 +87,8 @@ p {
     height: 30px;
 
     font-size: 20px;
+    border: 1px solid white;
+    border-radius: 100px;
 }
 
 #start {
